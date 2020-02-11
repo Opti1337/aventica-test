@@ -14,6 +14,8 @@ class FormCreate extends React.Component {
     }
 
     handleClick(toDraft) {
+        if (!this.state.text) return;
+
         this.props.onCreate(this.state.text, toDraft);
         this.setText('');
     }

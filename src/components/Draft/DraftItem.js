@@ -7,9 +7,11 @@ class DraftItem extends React.Component {
         return (
             <div className="card mb-3">
                 <div className="card-body">
-                    <div className="card-title">{item.text}</div>
-                    <button type="button" className="btn btn-danger mr-1">Remove</button>
-                    <button type="button" className="btn btn-success">Save</button>
+                    <div className="card-title">
+                        <input type="text" className="border-0" value={item.text} onChange={e => { this.props.onEdit(item.id, e.target.value) }} />
+                    </div>
+                    <button type="button" className="btn btn-danger mr-1" onClick={e => { this.props.onRemove(item.id) }}>Remove</button>
+                    <button type="button" className="btn btn-success" onClick={e => { this.props.onSave(item.id) }}>Save</button>
                 </div>
             </div>
         );

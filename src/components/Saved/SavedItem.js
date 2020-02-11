@@ -16,8 +16,8 @@ class SavedItem extends React.Component {
             <div className="card mb-3">
                 <div className="card-body">
                     <div className="card-title" >{item.text}</div>
-                    <button type="button" className="btn btn-primary mr-1">Draft</button>
-                    <button type="button" className="btn btn-secondary">Mark</button>
+                    <button type="button" className="btn btn-primary mr-1" onClick={e => { this.props.onDraft(item.id) }}>Draft</button>
+                    <button type="button" className="btn btn-secondary" onClick={e => { this.props.onMark(item.id) }}>Mark</button>
                     <div className={item.flag ? 'bg-success' : 'bg-danger'} style={flagStyles}></div>
                 </div>
             </div>
