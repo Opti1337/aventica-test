@@ -22,13 +22,17 @@ class FormCreate extends React.Component {
 
     render() {
         return (
-            <form>
-                <div className="form-group">
-                    <input type="text" className="form-control" value={this.state.text} onChange={e => this.setText(e.target.value)} />
+            <div className="card">
+                <div className="card-body">
+                    <form>
+                        <div className="form-group">
+                            <input type="text" className="form-control" value={this.state.text} onChange={e => this.setText(e.target.value)} />
+                        </div>
+                        <button type="button" className="btn btn-primary mr-1" onClick={this.handleClick.bind(this, true)}>Draft</button>
+                        <button type="button" className="btn btn-success" onClick={this.handleClick.bind(this, false)}>Save</button>
+                    </form>
                 </div>
-                <button type="button" className="btn btn-primary mr-1" onClick={this.handleClick.bind(this, true)}>Draft</button>
-                <button type="button" className="btn btn-success" onClick={this.handleClick.bind(this, false)}>Save</button>
-            </form>
+            </div>
         );
     }
 }

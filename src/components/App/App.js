@@ -97,23 +97,19 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container mb-3">
-          <Header items={this.state.savedItems} />
-        </div>
-        <div className="container">
+        <Header items={this.state.savedItems} />
+        <div className="container mt-5">
           <div className="row">
-            <div className="col-4">
-              <div className="border p-3 mb-3">
+            <div className="col-md-4">
+              <div className="mb-4">
                 <FormCreate onCreate={this.onCreated} />
               </div>
-              <div className="border p-3">
+              <div className="mb-4 mb-md-0">
                 <Draft items={this.state.draftedItems} onEdit={this.handleEdit} onRemove={this.handleRemove} onSave={this.handleSave} />
               </div>
             </div>
-            <div className="col-8">
-              <div className="border p-3">
-                <Saved items={this.state.savedItems} onDraft={this.handleDraft} onMark={this.handleMark} />
-              </div>
+            <div className="col-md-8">
+              <Saved items={this.state.savedItems} onDraft={this.handleDraft} onMark={this.handleMark} />
             </div>
           </div>
         </div>

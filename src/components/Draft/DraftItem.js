@@ -5,7 +5,7 @@ class DraftItem extends React.Component {
         let item = this.props.item;
 
         return (
-            <div className="card mb-3">
+            <div className="card">
                 <div className="card-body">
                     <div className="card-title">
                         <input type="text" className="border-0" value={item.text} onChange={e => { this.props.onEdit(item.id, e.target.value) }} />
